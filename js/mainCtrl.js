@@ -31,6 +31,11 @@ app.controller('mainCtrl', function($scope, itunesService){
     
     //Code here
 
+    $scope.getSongData = function(artist) {
+        itunesService.getArtist(artist).then(function(results) {
+                $scope.songData = results;
+            })
+    }
 
   //Check that the above method is working by entering a name into the input field on your web app, and then console.log the result
 
